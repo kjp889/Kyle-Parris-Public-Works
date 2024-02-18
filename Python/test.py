@@ -1,0 +1,1 @@
+print(colored(255, 0, 0, 'Hello, World'))
