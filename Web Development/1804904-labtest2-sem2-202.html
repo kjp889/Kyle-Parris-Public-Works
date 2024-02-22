@@ -1,0 +1,84 @@
+<!-- 
+Name: Kyle Parris
+ID#: 1804904
+Date: 09/Mar/2021
+Tutor: Christine Anuli
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Test #2</title>
+</head>
+<script>
+    let costs = [];
+    let discounts = [];
+    let phones = [];
+    let num = Math.floor(Math.random() * 1010) + 1000;
+    function PromoCodeYes() {
+     document.getElementById("Code").disabled = false;
+     document.getElementById("checkProCode").disabled = false;
+     //console.log(num)
+    };
+    
+    function ProButton() {
+    if (document.getElementById("Code").value == num) {
+        discount = cost * (3/100);
+        discounts.push(discount)
+        //console.log(num)
+        //console.log("yes");
+     }
+    };
+
+    function Send() {
+        let gcost = (document.getElementById("gB").value * 5.50);
+        let mcost = (document.getElementById("mins").value * 0.50);
+        costs.push(cost)
+        phones.push(document.getElementById("cellNo").value)
+    }
+
+</script>
+<body>
+    <form action="" id="myForm">
+        <div id="div1" name="div1">
+            <br>
+            
+            <hr>
+            <label for="cellNo">Cellphone no.:</label>
+            <input type="tel" id="cellNo" name="cellNom" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="876-555-1234" ><br><br>
+            Top-Up: <br>
+            Data
+            <input type="number" name="gB" id="gB" placeholder="Enter total gigabytes">GB @$5.50/GB <br> 
+            Calls
+            <input type="number" name="mins" id="mins" placeholder="Enter total minutes - max 720" max="720">Minutes @$0.50/min <br>           
+            <br>
+            Promo Code [1000 - 1010]?
+            <input type="radio" id="pCodeBtnYes" name="pCodeBtn" value="yes" onchange="PromoCodeYes()">Yes
+            <input type="radio" id="pCodeBtnNo" name="pCodeBtn" value="no">No <br><br>
+            Code:
+            <input type="number" name="uPCode" id="Code" placeholder="Enter Promo Code here" min="1000" max="1010" maxlength="4" disabled> <input type="button" id="checkProCode" value="Check Promo Code" disabled onclick="ProButton()">
+            <hr>
+            <br>
+            <input type="button" id="sendBtn" value="Send">
+            <input type="button" value="reset" id="resetBtn"><input type="button" id="printData" value="All Data"><br><br>
+        </div>
+        <br>   
+            <div id="div2" class="style1">
+                <h4>Your Receipt</h4>
+                Cellphone: <span id="phoneOutput"></span><br>
+                Top-up: <br>
+                Data Cost: $<span id="dataOutput"></span><br>   
+                Minutes Cost: $<span id="callsOutput"></span><br>
+                Promo Code: <span id="pCodeOutput"></span><br>
+                Code Entered: <span id="uPCodeOutput"></span><br><br>
+                Discount: $<span id="discOutput"></span><br>
+                Total: $<span id="totalOutput"></span><br>
+
+            </div>
+        
+    </form>
+</body>
+</html>

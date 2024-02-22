@@ -1,0 +1,60 @@
+<!-- 
+Name: Kyle Parris
+ID#: 1804904
+Date: 12/Mar/2021
+Tutor: Christine Anuli
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function AddOperator() {
+ 		document.getElementById("operation").value = document.getElementById("add").value;
+ 		var result = new Number(document.getElementById("value1").value) + new Number(document.getElementById("value2").value);
+ 		document.getElementById("result").value = result;
+ 	}
+
+ 	function SubOperator() {
+ 		document.getElementById("operation").value = document.getElementById("subtract").value;
+ 		var result = new Number(document.getElementById("value1").value) - new Number(document.getElementById("value2").value);
+ 		document.getElementById("result").value = result;
+ 	}
+
+ 	function MultOperator() {
+ 		document.getElementById("operation").value = document.getElementById("multiply").value;
+ 		var result = new Number(document.getElementById("value1").value) * new Number(document.getElementById("value2").value);
+ 		document.getElementById("result").value = result;
+ 	}
+
+ 	function DivOperator() {
+ 		document.getElementById("operation").value = document.getElementById("divide").value;
+ 		num = new Number(document.getElementById("value2").value);
+ 		if (num == 0) {
+ 			alert("You cannot divide by zero");
+ 		}
+ 		var result = new Number(document.getElementById("value1").value) / num;
+ 		document.getElementById("result").value = result;
+ 	}
+</script>
+</head>
+
+<body>
+
+<form id="myForm">
+<fieldset  style="padding:20px; width:400px">
+  <legend>Simple Calculator</legend>
+Value 1:&nbsp; <input type="number" size = "6" id="value1">&nbsp;&nbsp;
+Operation:&nbsp;<input type = "text" size = "2" id = "operation" disabled/>
+Value 2:&nbsp; <input type="number" size = "6" id="value2"><br/><br/>
+Result:&nbsp; <input type="number" size = "20" id="result" disabled><br/>
++&nbsp;<input type="radio" name="operator" id="add" value ="+" onchange="AddOperator()" /><br>
+-&nbsp;&nbsp;<input type="radio" name="operator" id="subtract" value="-" onchange="SubOperator()"><br>
+*&nbsp;<input type="radio" name="operator" id="multiply" value="*" onchange="MultOperator()"><br>
+/&nbsp;&nbsp;<input type="radio" name="operator" id="divide" value="/" onchange="DivOperator()"><br><br>
+
+<button type="reset" value="Reset">Reset</button>
+</fieldset>
+</form>
+
+</body>
+</html> 
