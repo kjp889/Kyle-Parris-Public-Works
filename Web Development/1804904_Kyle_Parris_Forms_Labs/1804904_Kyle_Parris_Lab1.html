@@ -1,0 +1,160 @@
+<!-- 
+Name: Kyle Parris
+ID#: 1804904
+Date: 15/Feb/2021
+Tutor: Christine Anuli
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FormsLab 1</title>
+</head>
+<body>
+	<center><div style="border: solid 2px; padding: 15px; width: 20%; position: absolute; z-index: 2; left: 30%; top: 10px; background-color: white;">ABC Hotel Reservation</div></center><br>
+	<center><div style="position: absolute;	width: 90%; z-index: 1;	border: solid; padding-top: 35px"><table width="80%" cellpadding="0" cellspacing="0" align="center">
+		<tr><td>3/25/2009</td></tr>
+		<tr>
+			<td style="height: 50px" colspan="2">Guest Information</td>
+			<td colspan="2">Room Information</td>
+		</tr>
+	<form>
+		<tr>
+			<td style="width: 8%; background-color: lightgrey; border: solid 1px;">
+				<label for="firstname">First Name:</label>
+			</td>
+			<td style="width: 30%">
+				<input type="text" id="firstname" name="" size="35" style="border-radius: 0">
+			</td>
+			<td style="border: solid 1px; width: 14%; background-color: lightgrey">
+				<label for="adult">Number of Adult Guests:</label>
+			</td>
+			<td style="width: 30%">
+				<input type="Number" min="0" id="adult" name="" size="45" style="border-radius: 0">
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="lastname">Last Name:</label>
+			</td>
+			<td>
+				<input type="text" id="lastname" name="" size="35" style="border-radius: 0">
+			</td>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="child">Number of Child Guests:</label>
+			</td>
+			<td>
+				<input type="Number" id="child" name="" min="0" size="35" style="border-radius: 0">
+			</td>
+		</tr>
+		<tr style="height: 15px"></tr>
+		<tr>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="address1">Address 1:</label>
+			</td>
+			<td>
+				<input type="text" id="address1" name="" size="35" style="border-radius: 0">
+			</td>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="rooms">Room Type:</label>
+			</td>
+			<td>
+				<select name="rooms" id="rooms" style="border-radius: 0">
+					<option selected value="standard">Standard Rooms</option>
+					<option value="double">Double Rooms</option>
+					<option value="twin">Twin Rooms</option>
+					<option value="pent">Penthouse</option>
+				</select>
+			</td>
+		</tr>
+		<tr style="height: 15px"></tr>
+		<tr>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="address2">Address 2:</label>
+			</td>
+			<td>
+				<input type="text" id="address2" name="" size="35" style="border-radius: 0">
+			</td>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="indate">Check-in Date:</label>
+			</td>
+			<td>
+				<input type="Date" id="indate" name="" size="35" style="border-radius: 0">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				
+			</td>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="intime">Check-in Time:</label>
+			</td>
+			<td>
+				<input type="time" id="intime" name="" size="35" style="border-radius: 0">
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="city">City:</label>
+			</td>
+			<td>
+				<input type="text" id="city" name="" size="35" style="border-radius: 0">
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="state">State:</label>
+			</td>
+			<td>
+				<input type="text" id="state" name="" size="35" style="border-radius: 0">
+			</td>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="outdate">Check-out Date:</label>
+			</td>
+			<td>
+				<input type="Date" id="outdate" name="" size="35" style="border-radius: 0">
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="zip">Zip:</label>
+			</td>
+			<td>
+				<input type="text" id="zip" name="" size="35" style="border-radius: 0">
+			</td>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="outtime">Check-out Time:</label>
+			</td>
+			<td>
+				<input type="time" id="outtime" name="" size="35" style="border-radius: 0">
+			</td>
+		</tr>
+		<tr style="height: 15px"></tr>
+		<tr>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="phone">Phone:</label>
+			</td>
+			<td>
+				<input type="tel" id="phone" name="" size="35" style="border-radius: 0">
+			</td>
+			<td style="background-color: lightgrey; border: solid 1px;">
+				<label for="instruction">Special Instruction:</label>
+			</td>
+		</tr>
+		<tr>
+			<td  style="background-color: lightgrey; border: solid 1px;">
+				<label for="email">Email:</label>
+			</td>
+			<td>
+				<input type="email" id="email" name="" size="35" style="border-radius: 0">
+			</td>
+			<td colspan="6" rowspan="2" style="padding-top: 0">
+				<textarea style="width: 80%;
+				height: 60px"></textarea>
+			</td>
+		</tr>
+		<tr style="height: 60px"><td><input type="submit" name=""></td></tr>
+	</form>
+	</table></div></center>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!-- 
+Name: Kyle Parris
+ID#: 1804904
+Date: 15/Feb/2021
+Tutor: Christine Anuli
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FormsLab 2</title>
+	<style>
+		input{width: 90%;}
+	</style>
+</head>
+<body>
+	<h1>Contact</h1>
+	<form>
+		<label for="name"><b>Your Name</b> <font color="red">*</font></label>
+		<br>
+		<input type="text" id="name" required>
+		<br><br>
+		<label for="email"><b>Your e-mail address</b> <font color="red">*</font></label>
+		<br>
+		<input type="email" id="email" required placeholder="kjp056@gmail.com">
+		<br><br>
+		<label for="subject"><b>Subject </b><font color="red">*</font></label>
+		<br>
+		<input type="text" id="subject" required>
+		<br><br>
+		<label for="message"><b>Message </b><font color="red">*</font></label>
+		<br>
+		<textarea style="width: 90%; height: 100px; overflow-x: scroll;" required></textarea>
+		<br><br>
+		<label for="att"><b>Attachmant #1</b></label>
+		<br>
+		<input type="file" id="att">
+		<br><br>
+		<label for="att2"><b>Attachmant #2</b></label>
+		<br>
+		<input type="file" id="att2">
+		<br><br>
+		<button>Send Message</button>
+	</form>
+</body>
+</html>
