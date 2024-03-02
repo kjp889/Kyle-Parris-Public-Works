@@ -1,0 +1,56 @@
+
+public class Car extends Vehicle {
+	private String interiorType;
+
+	public Car() {
+		this.licensePlateNumber = "Unidentified";
+		this.brand = "Unidentified";
+		this.color = "Unidentified";
+		this.engineSize = 0.00;
+		this.fuelType = "Unidentified";
+		this.mileage = 0.00;
+		this.model = "Unidentified";
+		this.ratePerDay = 0.00;
+		this.rentalStatus = false;
+		this.seatingCapacity = 0;
+		this.transmissionType = "Unidentified";
+		this.year = 1990;
+		this.interiorType = "Unidentified";
+	}
+	
+	public Car(String licensePlateNumber, String brand,
+	String model, int year, String color, double engineSize,
+	String fuelType, String transmissionType, double mileage,
+	int seatingCapacity, double ratePerDay, boolean rentalStatus, String interiorType) {
+		this.licensePlateNumber = licensePlateNumber;
+		this.brand = brand;
+		this.color = color;
+		this.engineSize = engineSize;
+		this.fuelType = fuelType;
+		this.mileage = mileage;
+		this.model = model;
+		this.ratePerDay = ratePerDay;
+		this.rentalStatus = rentalStatus;
+		this.seatingCapacity = seatingCapacity;
+		this.transmissionType = transmissionType;
+		this.year = year;
+		this.interiorType = interiorType;
+	}
+	
+	public Car(Car car) {
+		this.licensePlateNumber = car.licensePlateNumber;
+		this.brand = car.brand;
+		this.color = car.color;
+		this.engineSize = car.engineSize;
+		this.fuelType = car.fuelType;
+		this.mileage = car.mileage;
+		this.model = car.model;
+		this.ratePerDay = car.ratePerDay;
+		this.rentalStatus = car.rentalStatus;
+		this.seatingCapacity = car.seatingCapacity;
+		this.transmissionType = car.transmissionType;
+		this.year = car.year;
+		this.interiorType = car.interiorType;
+	}
+	
+}

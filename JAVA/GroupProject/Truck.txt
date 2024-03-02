@@ -1,0 +1,85 @@
+
+public class Truck extends Vehicle {
+	private String interiorType;
+	private double towingCapacity;
+	
+	public Truck() {
+		this.licensePlateNumber = "Unidentified";
+		this.brand = "Unidentified";
+		this.color = "Unidentified";
+		this.engineSize = 0.00;
+		this.fuelType = "Unidentified";
+		this.mileage = 0.00;
+		this.model = "Unidentified";
+		this.ratePerDay = 0.00;
+		this.rentalStatus = false;
+		this.seatingCapacity = 0;
+		this.transmissionType = "Unidentified";
+		this.year = 1990;
+		this.interiorType = "Unidentified";
+		this.towingCapacity = 0.00;
+	}
+	
+	public Truck(String licensePlateNumber, String brand,
+	String model, int year, String color, double engineSize,
+	String fuelType, String transmissionType, double mileage,
+	int seatingCapacity, double ratePerDay, boolean rentalStatus, 
+	String interiorType, double towingCapacity) {
+		this.licensePlateNumber = licensePlateNumber;
+		this.brand = brand;
+		this.color = color;
+		this.engineSize = engineSize;
+		this.fuelType = fuelType;
+		this.mileage = mileage;
+		this.model = model;
+		this.ratePerDay = ratePerDay;
+		this.rentalStatus = rentalStatus;
+		this.seatingCapacity = seatingCapacity;
+		this.transmissionType = transmissionType;
+		this.year = year;
+		this.interiorType = interiorType;
+		this.towingCapacity = towingCapacity;
+	}
+	
+	public Truck(Truck truck) {
+		this.licensePlateNumber = truck.licensePlateNumber;
+		this.brand = truck.brand;
+		this.color = truck.color;
+		this.engineSize = truck.engineSize;
+		this.fuelType = truck.fuelType;
+		this.mileage = truck.mileage;
+		this.model = truck.model;
+		this.ratePerDay = truck.ratePerDay;
+		this.rentalStatus = truck.rentalStatus;
+		this.seatingCapacity = truck.seatingCapacity;
+		this.transmissionType = truck.transmissionType;
+		this.year = truck.year;
+		this.interiorType = truck.interiorType;
+		this.towingCapacity = truck.towingCapacity;
+	}
+
+	public String getInteriorType() {
+		return interiorType;
+	}
+
+	public void setInteriorType(String interiorType) {
+		this.interiorType = interiorType;
+	}
+
+	public double getTowingCapacity() {
+		return towingCapacity;
+	}
+
+	public void setTowingCapacity(double towingCapacity) {
+		this.towingCapacity = towingCapacity;
+	}
+	
+	public String toString() {
+		return "License Plate Number: " + licensePlateNumber + "\nBrand: " + brand + "\nModel: " + model + "\nYear: "
+				+ year + "\nColor: " + color + "\nEngine Size: " + engineSize + "\nFuel Type: " + fuelType
+				+ "\nTransmission Type: " + transmissionType + "\nMileage: " + mileage + "\nSeating Capacity: "
+				+ seatingCapacity + "\nInterior Type: " + interiorType +"\nTowing Capacity: " + towingCapacity 
+				+  "\nRate Per Day: " + ratePerDay + "\nRented: " + rentalStatus;
+	}
+
+}

@@ -1,0 +1,55 @@
+
+public class Rental {
+	private Date dateRented;
+	private Date expectedReturnDate;
+	private double depositePaid;
+	
+	public Rental() {
+		Date dateRented = new Date();
+		Date expectedReturnDate = new Date();
+		this.dateRented = dateRented;
+		this.expectedReturnDate = expectedReturnDate;
+		this.depositePaid = 0.00;
+	}
+	
+	public Rental(Date dateRented, Date expectedReturnDate, double depositePaid) {
+		this.dateRented = dateRented;
+		this.expectedReturnDate = expectedReturnDate;
+		this.depositePaid = depositePaid;
+	}
+	
+	public Rental(Rental rental) {
+		Date dateRented = new Date(rental.dateRented);
+		Date expectedReturnDate = new Date(rental.expectedReturnDate);
+		this.dateRented = rental.dateRented;
+		this.expectedReturnDate = rental.expectedReturnDate;
+		this.depositePaid = rental.depositePaid;
+	}
+
+	public Date getDateRented() {
+		return dateRented;
+	}
+
+	public void setDateRented(Date dateRented) {
+		this.dateRented = dateRented;
+	}
+
+	public Date getExpectedReturnDate() {
+		return expectedReturnDate;
+	}
+
+	public void setExpectedReturnDate(Date expectedReturnDate) {
+		this.expectedReturnDate = expectedReturnDate;
+	}
+
+	public double getDepositePaid() {
+		return depositePaid;
+	}
+
+	public void setDepositePaid(double depositePaid) {
+		this.depositePaid = depositePaid;
+	}
+	
+	
+
+}

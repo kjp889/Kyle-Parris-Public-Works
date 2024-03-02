@@ -1,0 +1,73 @@
+
+public class Bike extends Vehicle {
+	private int numberOfHelmets;
+	
+	public Bike() {
+		this.licensePlateNumber = "Unidentified";
+		this.brand = "Unidentified";
+		this.color = "Unidentified";
+		this.engineSize = 0.00;
+		this.fuelType = "Unidentified";
+		this.mileage = 0.00;
+		this.model = "Unidentified";
+		this.ratePerDay = 0.00;
+		this.rentalStatus = false;
+		this.seatingCapacity = 0;
+		this.transmissionType = "Unidentified";
+		this.year = 1990;
+		this.numberOfHelmets = 0;
+	}
+	
+	public Bike (String licensePlateNumber, String brand,
+	String model, int year, String color, double engineSize,
+	String fuelType, String transmissionType, double mileage,
+	int seatingCapacity, double ratePerDay, boolean rentalStatus, 
+	String interiorType, double towingCapacity, int numberOfHelmets) {
+		this.licensePlateNumber = licensePlateNumber;
+		this.brand = brand;
+		this.color = color;
+		this.engineSize = engineSize;
+		this.fuelType = fuelType;
+		this.mileage = mileage;
+		this.model = model;
+		this.ratePerDay = ratePerDay;
+		this.rentalStatus = rentalStatus;
+		this.seatingCapacity = seatingCapacity;
+		this.transmissionType = transmissionType;
+		this.year = year;
+		this.numberOfHelmets = numberOfHelmets;
+	}
+
+	public Bike (Bike bike) {
+		this.licensePlateNumber = bike.licensePlateNumber;
+		this.brand = bike.brand;
+		this.color = bike.color;
+		this.engineSize = bike.engineSize;
+		this.fuelType = bike.fuelType;
+		this.mileage = bike.mileage;
+		this.model = bike.model;
+		this.ratePerDay = bike.ratePerDay;
+		this.rentalStatus = bike.rentalStatus;
+		this.seatingCapacity = bike.seatingCapacity;
+		this.transmissionType = bike.transmissionType;
+		this.year = bike.year;
+		this.numberOfHelmets = bike.numberOfHelmets;
+	}
+
+	public int getNumberOfHelmets() {
+		return numberOfHelmets;
+	}
+
+	public void setNumberOfHelmets(int numberOfHelmets) {
+		this.numberOfHelmets = numberOfHelmets;
+	}
+	
+	public String toString() {
+		return "License Plate Number: " + licensePlateNumber + "\nBrand: " + brand + "\nModel: " + model + "\nYear: "
+				+ year + "\nColor: " + color + "\nEngine Size: " + engineSize + "\nFuel Type: " + fuelType
+				+ "\nTransmission Type: " + transmissionType + "\nMileage: " + mileage + "\nSeating Capacity: "
+				+ seatingCapacity + "\nNumber of Helmets: " + numberOfHelmets + "\nRate Per Day: " + ratePerDay 
+				+ "\nRented: " + rentalStatus;
+	}
+
+}

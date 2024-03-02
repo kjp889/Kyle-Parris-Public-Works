@@ -1,0 +1,224 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Vehicle {
+	protected String licensePlateNumber;
+	protected String brand;
+	protected String model;
+	protected int year;
+	protected String color;
+	protected double engineSize;
+	protected String fuelType;
+	protected String transmissionType;
+	protected double mileage;
+	protected int seatingCapacity;
+	protected double ratePerDay;
+	protected boolean rentalStatus;
+	
+	public Vehicle() {
+		this.licensePlateNumber = "Unidentified";
+		this.brand = "Unidentified";
+		this.color = "Unidentified";
+		this.engineSize = 0.00;
+		this.fuelType = "Unidentified";
+		this.mileage = 0.00;
+		this.model = "Unidentified";
+		this.ratePerDay = 0.00;
+		this.rentalStatus = false;
+		this.seatingCapacity = 0;
+		this.transmissionType = "Unidentified";
+		this.year = 1990;
+	}
+	
+	public Vehicle(String licensePlateNumber, String brand,
+	String model, int year, String color, double engineSize,
+	String fuelType, String transmissionType, double mileage,
+	int seatingCapacity, double ratePerDay, boolean rentalStatus) {
+		this.licensePlateNumber = licensePlateNumber;
+		this.brand = brand;
+		this.color = color;
+		this.engineSize = engineSize;
+		this.fuelType = fuelType;
+		this.mileage = mileage;
+		this.model = model;
+		this.ratePerDay = ratePerDay;
+		this.rentalStatus = rentalStatus;
+		this.seatingCapacity = seatingCapacity;
+		this.transmissionType = transmissionType;
+		this.year = year;
+	}
+	
+	public Vehicle(Vehicle vehicle) {
+		this.licensePlateNumber = vehicle.licensePlateNumber;
+		this.brand = vehicle.brand;
+		this.color = vehicle.color;
+		this.engineSize = vehicle.engineSize;
+		this.fuelType = vehicle.fuelType;
+		this.mileage = vehicle.mileage;
+		this.model = vehicle.model;
+		this.ratePerDay = vehicle.ratePerDay;
+		this.rentalStatus = vehicle.rentalStatus;
+		this.seatingCapacity = vehicle.seatingCapacity;
+		this.transmissionType = vehicle.transmissionType;
+		this.year = vehicle.year;
+	}
+		
+	public String getLicensePlateNumber() {
+		return licensePlateNumber;
+	}
+
+	public void setLicensePlateNumber(String licensePlateNumber) {
+		this.licensePlateNumber = licensePlateNumber;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public double getEngineSize() {
+		return engineSize;
+	}
+
+	public void setEngineSize(double engineSize) {
+		this.engineSize = engineSize;
+	}
+
+	public String getFuelType() {
+		return fuelType;
+	}
+
+	public void setFuelType(String fuelType) {
+		this.fuelType = fuelType;
+	}
+
+	public String getTransmissionType() {
+		return transmissionType;
+	}
+
+	public void setTransmissionType(String transmissionType) {
+		this.transmissionType = transmissionType;
+	}
+
+	public double getMileage() {
+		return mileage;
+	}
+
+	public void setMileage(double mileage) {
+		this.mileage = mileage;
+	}
+
+	public int getSeatingCapacity() {
+		return seatingCapacity;
+	}
+
+	public void setSeatingCapacity(int seatingCapacity) {
+		this.seatingCapacity = seatingCapacity;
+	}
+
+	public double getRatePerDay() {
+		return ratePerDay;
+	}
+
+	public void setRatePerDay(double ratePerDay) {
+		this.ratePerDay = ratePerDay;
+	}
+
+	public boolean getRentalStatus() {
+		return rentalStatus;
+	}
+
+	public void setRentalStatus(boolean rentalStatus) {
+		this.rentalStatus = rentalStatus;
+	}
+
+	/*Not sure if this should be abstract and be implemented in the children classes or be implemented in main but if not i think it
+	would look something like this*/
+	public void viewAllVehicles() {
+		Vehicle vehicle = new Vehicle();
+		Scanner inFileReader = null;
+		try {
+			inFileReader = new Scanner(new File("Cars4Rent Vehicles.xlsx"));	
+			while (inFileReader.hasNext()) {
+				vehicle.setLicensePlateNumber(inFileReader.next());
+				vehicle.setBrand(inFileReader.next());
+				vehicle.setModel(inFileReader.next());
+				System.out.println();
+				vehicle.display();
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void display() {
+		System.out.println(this.toString());
+	}
+
+	public String toString() {
+		return "License Plate Number: " + licensePlateNumber + "\nBrand: " + brand + "\nModel: " + model + "\nYear: "
+				+ year + "\nColor: " + color + "\nEngine Size: " + engineSize + "\nFuel Type: " + fuelType
+				+ "\nTransmission Type: " + transmissionType + "\nMileage: " + mileage + "\nSeating Capacity: "
+				+ seatingCapacity + "\nRate Per Day: " + ratePerDay + "\nRented: " + rentalStatus;
+	}
+	
+	/*Not sure if this should be abstract and be implemented in the children classes or be implemented in main but if not i think it
+	would look something like this*/	
+	public void searchVehiclesByPlate() {
+		String searchPlate = " ";
+		Scanner input = null;
+		Scanner inFileReader = null;
+		Vehicle vehicle = new Vehicle();
+		try {
+			input = new Scanner(System.in);
+			inFileReader = new Scanner(new File("Cars4Rent Vehicles.xlsx"));
+			System.out.print("Enter the Plate Number to search for: ");
+			searchPlate = input.next();		
+			while (inFileReader.hasNext()) {
+				vehicle.setLicensePlateNumber(inFileReader.next());
+				vehicle.setBrand(inFileReader.next());
+				vehicle.setModel(inFileReader.next());
+				if (vehicle.licensePlateNumber == searchPlate) {
+					vehicle.display();
+					//return;
+				}				
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (InputMismatchException e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+}

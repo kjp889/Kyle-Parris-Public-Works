@@ -1,0 +1,186 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+
+
+public class Customer {
+	private int trn;
+	private String firstName;
+	private String lastName;
+	private String localAddress;
+	private String phoneNumber;
+		
+	public Customer() {
+		this.trn = 000000000;
+		this.firstName = "FirstName";
+		this.lastName = "LastName";
+		this.localAddress = "Address";
+		this.phoneNumber = "(xxx) xxx - xxxx";
+	}
+	
+	public Customer(int trn, String firstName, String lastName, String localAddress, String phoneNumber) {
+		this.trn = trn;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.localAddress = localAddress;
+		this.phoneNumber = phoneNumber;
+	}
+	
+	public Customer(Customer customer) {
+		this.trn = customer.trn;
+		this.firstName = customer.firstName;
+		this.lastName = customer.lastName;
+		this.localAddress = customer.localAddress;
+		this.phoneNumber = customer.phoneNumber;
+	}
+
+	public int getTrn() {
+		return trn;
+	}
+
+	public void setTrn(int trn) {
+		this.trn = trn;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getLocalAddress() {
+		return localAddress;
+	}
+
+	public void setLocalAddress(String localAddress) {
+		this.localAddress = localAddress;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	
+	public void displayCustomer() {
+		System.out.println(this.toString());
+	}
+	
+	public void getCustomerFromUser() {
+		try {
+			Scanner input = new Scanner(System.in);
+			System.out.print("Please enter your TRN:");
+			trn = input.nextInt();
+			System.out.print("Enter First Name: ");
+			firstName = input.next();
+			System.out.print("Enter Last Name: ");
+			lastName = input.next();
+			System.out.print("Enter Local Address: ");
+			localAddress = input.next();
+			System.out.print("Enter Local Phone Number: ");
+			phoneNumber = input.next();
+			//input.close();
+		} catch (InputMismatchException e) {
+			System.err.println("Invalid data type");
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void createAndInitializeFile() {
+		int max = 100;
+		Customer customer = new Customer();
+		
+		try {
+			RandomAccessFile rafPointer = new RandomAccessFile(new File("Customers.dat"),"rw");
+			for (int index = 1; index <= max; index++) {
+				rafPointer.seek((index - 1) * (4 + 60 + 60 + 200 + 40));
+				
+				rafPointer.writeInt(customer.getTrn());
+				rafPointer.writeUTF(customer.getFirstName());
+				rafPointer.writeUTF(customer.getLastName());
+				rafPointer.writeUTF(customer.getLocalAddress());
+				rafPointer.writeUTF(customer.getPhoneNumber());
+			}
+			rafPointer.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+	}
+	
+	public void saveCustomerToFile() {
+		try {
+			RandomAccessFile rafPointer = new RandomAccessFile(new File("Customers.dat"),"rw");
+			rafPointer.seek(((int) trn - 1) * (4 + 60 + 60 + 200 + 40));
+			
+			rafPointer.writeInt(trn);
+			rafPointer.writeUTF(firstName);
+			rafPointer.writeUTF(lastName);
+			rafPointer.writeUTF(localAddress);
+			rafPointer.writeUTF(phoneNumber);
+			rafPointer.close();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void retrieveCustomerFromFile() {
+		Scanner input = null;
+		System.out.print("Enter part number: ");
+		int searchTRN = input.nextInt();
+		try {
+			RandomAccessFile rafPointer = new RandomAccessFile(new File("Customers.dat"),"rw");
+			rafPointer.seek(((int) searchTRN - 1) * (4 + 60 + 60 + 200 + 40));
+			
+			this.trn = rafPointer.readInt();
+			this.firstName = rafPointer.readUTF();
+			this.lastName = rafPointer.readUTF();
+			this.localAddress = rafPointer.readUTF();
+			this.phoneNumber = rafPointer.readUTF();
+			rafPointer.close();
+			
+			if (trn != searchTRN) {
+				System.out.println("Customer not found");
+			}
+			displayCustomer();
+			//input.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (InputMismatchException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "TRN: " + trn + "\nFirst Name: " + firstName + "\nLast Name" + lastName + "\nAddress: "
+				+ localAddress + "\nPhone Number: " + phoneNumber;
+	}
+
+}
