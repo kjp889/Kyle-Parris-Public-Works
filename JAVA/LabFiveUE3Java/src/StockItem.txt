@@ -1,0 +1,28 @@
+1234	239.6	Condense Milk
+1000	250.0	Jack Cake
+1234	239.6	Condense Milk
+1001	200.0	
+1003	0.0	
+1003	10.3	cheese stick
+1236	30.0	phone
+1236	30.0	phone
+1236	30.0	phone
+1236	30.0	phone
+1236	30.0	phone
+1236	30.0	phone
+1236	30.0	phone
+1236	30.0	phone
+1236	30.0	phone
+1236	30.0	phone
+0	0.0	
+0	0.0	
+0	0.0	
+0	0.0	
+0	0.0	
+0	0.0	
+0	0.0	
+0	0.0	
+0	0.0	
+0	0.0	
+1	2.0	l
+3	5.0	r
