@@ -1,0 +1,6 @@
+[INFO ] 2023-04-05 14:43;11.363 [main] LoggingExample - Test INFO Message
+[DEBUG] 2023-04-05 14:43;11.440 [main] LoggingExample - Test DEBUG Message
+[ERROR] 2023-04-05 14:43;11.443 [main] LoggingExample - Test ERROR Message
+[TRACE] 2023-04-05 14:43;11.444 [main] LoggingExample - Test TRACE Message
+[FATAL] 2023-04-05 14:43;11.445 [main] LoggingExample - Test FATAL Message
+[WARN ] 2023-04-05 14:43;11.446 [main] LoggingExample - Test WARNING Message

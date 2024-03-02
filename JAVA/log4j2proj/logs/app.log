@@ -1,0 +1,12 @@
+2023-04-07 10:43:05,635 INFO l.LoggingExample [main] Test INFO Message
+2023-04-07 10:43:05,839 DEBUG l.LoggingExample [main] Test DEBUG Message
+2023-04-07 10:43:05,841 ERROR l.LoggingExample [main] Test ERROR Message
+2023-04-07 10:43:05,841 TRACE l.LoggingExample [main] Test TRACE Message
+2023-04-07 10:43:05,842 FATAL l.LoggingExample [main] Test FATAL Message
+2023-04-07 10:43:05,842 WARN l.LoggingExample [main] Test WARNING Message
+2023-04-07 10:43:45,255 INFO l.LoggingExample [main] Test INFO Message
+2023-04-07 10:43:45,270 DEBUG l.LoggingExample [main] Test DEBUG Message
+2023-04-07 10:43:45,271 ERROR l.LoggingExample [main] Test ERROR Message
+2023-04-07 10:43:45,272 TRACE l.LoggingExample [main] Test TRACE Message
+2023-04-07 10:43:45,345 FATAL l.LoggingExample [main] Test FATAL Message
+2023-04-07 10:43:45,346 WARN l.LoggingExample [main] Test WARNING Message
